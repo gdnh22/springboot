@@ -29,7 +29,7 @@ https://docs.spring.io/spring-boot/docs/current/reference/html/getting-started-i
 		<version>2.1.4.RELEASE</version>
 	</parent>
 
-	<!-- Add typical dependencies for a web application -- 复制此内容到pom>
+	<!-- Add typical dependencies for a web application -- 复制此内容到pom-->
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
