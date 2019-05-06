@@ -11,7 +11,7 @@ public class helloworld {
         return "Hello World! Call me Fengge";
     }
     public static void main(String[] args) {
-        SpringApplication.run(helloworld.class, args);
+        SpringApplication.run(helloworld.class, args);   //声明这是一个springboot程序，会启用内置的tomcat
     }
 
 }

@@ -65,13 +65,45 @@ https://docs.spring.io/spring-boot/docs/current/reference/html/getting-started-f
 
 @controller
 配置阿里云，后台下载相关插件。
+  <mirrors>
+    <!-- mirror
+     | Specifies a repository mirror site to use instead of a given repository. The repository that
+     | this mirror serves has an ID that matches the mirrorOf element of this mirror. IDs are used
+     | for inheritance and direct lookup purposes, and must be unique across the set of mirrors.
+     |     -->
+    <mirror>
+      <id>mirrorId</id>
+      <mirrorOf>repositoryId</mirrorOf>
+      <name>Human Readable Name for this Mirror.</name>
+	  <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+      <!--<url>http://my.repository.com/repo/path</url>  -->
+    </mirror>
+  </mirrors>
 
-
-
-
-
-
+运行localhost:8080可以看到执行结果。
 
 
 
 最终生成JAR包，内置TOMCAT
+POM添加
+
+11.5 Creating an Executable Jar
+<!-- 该插件用于jar包-->
+<build>
+	<plugins>
+		<plugin>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-maven-plugin</artifactId>
+		</plugin>
+	</plugins>
+</build>
+
+Maven窗口，Lifecycle，双击package
+左边project窗口，target->ideal1-helloworld-1.0-SNAPSHOT.jar拷贝D:\
+控制台 java -jar ideal1-helloworld-1.0-SNAPSHOT.jar，启动jar包。
+
+注：默认情况下springboot只会扫描主程序类所在的包及子包。
+java下的包，所以main函数必须在java目录下，否则访问会出错。
+
+
+
